@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[][] arr = new String[4][4]; //
+        String[][] arr = new String[4][4]; // вот тут может возникнуть MyArraySizeException
         fillArray(arr);
 
         arr[1][1] = "qwerty"; // Принудительный MyArrayDataException
