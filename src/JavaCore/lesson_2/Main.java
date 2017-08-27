@@ -10,7 +10,7 @@ public class Main {
         String[][] arr = new String[4][4]; //
         fillArray(arr);
 
-//        arr[1][1] = "qwerty"; // Принудительный MyArrayDataException
+        arr[1][1] = "qwerty"; // Принудительный MyArrayDataException
 
         try {
             processingArrayAndPrint(arr);
@@ -22,8 +22,9 @@ public class Main {
     // Может стоило все записать в этом методе, а не делить на несколько...
     private static void processingArrayAndPrint(String[][] strArray) {
         checkArrayForDimensions(strArray);
-        System.out.println(String.format("Сумма всех элементов массива равна - %s",
-                checkCellAndSummarize(strArray)));
+        String str = String.format("Сумма всех элементов массива равна - %s", checkCellAndSummarize(strArray));
+//        String strBig = String.format("Сумма всех элементов массива равна - %s", checkCellAndSummarize(strArray));
+        System.out.println(str);
     }
 
     // Проверка на размерность
@@ -39,7 +40,23 @@ public class Main {
     }
 
     // Метод проверки ячейки и вычисления суммы всех ячеек
-    private static BigInteger checkCellAndSummarize(String[][] strArray) {
+    private static int checkCellAndSummarize(String[][] strArray) {
+        int result = 0;
+        for (int i = 0; i < strArray.length; i++) {
+            for (int j = 0; j < strArray[i].length; j++) {
+                if (strArray[i][j] != null && strArray[i][j].matches("[\\d]+")) {
+                    int temp = Integer.parseInt(strArray[i][j]);
+                    result += temp;
+                } else
+                    throw new MyArrayDataException(i, j);
+            }
+        }
+        return result;
+    }
+
+
+    // Аналог checkCellAndSummarize() для огромных чисел
+    private static BigInteger checkCellAndSummarizeBig(String[][] strArray) {
         BigInteger bigNum = BigInteger.ZERO;
         for (int i = 0; i < strArray.length; i++) {
             for (int j = 0; j < strArray[i].length; j++) {
