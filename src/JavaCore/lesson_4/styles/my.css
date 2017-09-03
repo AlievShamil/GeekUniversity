@@ -1,0 +1,52 @@
+.my-hBox {
+    -fx-background-color: #ddddca;
+}
+
+.my-pane .viewport {
+    -fx-background-image: url("/JavaCore/lesson_4/res/background.png");
+}
+
+.my-imageView {
+    -fx-background-radius: 10em;
+    -fx-image: url("/JavaCore/lesson_4/res/geek.png");
+}
+
+.my-button-send {
+    -fx-graphic: url("/JavaCore/lesson_4/res/send.png");
+    -fx-opacity: 0.6;
+    -fx-background-color: transparent;
+    -fx-background-radius: 10em;
+}
+
+.my-button-delete {
+    -fx-graphic: url("/JavaCore/lesson_4/res/delete.png");
+    -fx-opacity: 0.6;
+    -fx-background-radius: 10em;
+}
+.my-button-emoticon {
+    -fx-graphic: url("/JavaCore/lesson_4/res/emoticon.png");
+    -fx-opacity: 0.6;
+    -fx-background-color: transparent;
+    -fx-background-radius: 10em;
+}
+
+.my-label-left {
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 15pt;
+    -fx-background-color: white;
+    -fx-background-radius: 10 10 10 0;
+
+}
+
+.my-label-right {
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 15pt;
+    -fx-background-color: bisque;
+    -fx-background-radius: 10 10 0 10;
+}
+
+.my-label-time {
+    -fx-alignment: center;
+    -fx-text-fill: white;
+}
+
