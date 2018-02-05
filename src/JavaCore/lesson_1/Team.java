@@ -6,6 +6,7 @@ public class Team {
     private String name;
     private Animal[] members;
 
+
     public Team(String name, Animal[] members) {
         this.name = name;
         this.members = members;

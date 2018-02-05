@@ -20,6 +20,7 @@ public class ChatWindow extends JFrame{
     private DataOutputStream out;
     private boolean isAuthorized;
 
+
     public void setAuthorized(boolean authorized){
         isAuthorized = authorized;
         upperPanel.setVisible(!isAuthorized);
@@ -27,6 +28,7 @@ public class ChatWindow extends JFrame{
     }
 
     public ChatWindow(){
+
         setTitle("Chat Window");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(400,300, 400,400);
@@ -78,7 +80,7 @@ public class ChatWindow extends JFrame{
             }
         });
         try{
-            socket = new Socket("localhost", 8289);
+            socket = new Socket("localhost", 8389);
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
         }catch(IOException e){

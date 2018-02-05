@@ -1,6 +1,6 @@
 package JavaCore.lesson_1;
 
-public class Animal implements Participant{
+public class Animal implements Challengeable {
     private int maxRunDistance;
     private int maxJumpHeight;
     private int maxSwimDistance;

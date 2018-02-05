@@ -6,20 +6,20 @@ import java.net.Socket;
 import java.util.Vector;
 
 public class Server {
-    private final int PORT = 8289;
+    private final int PORT = 8389;
     private Vector<ClientHandler> clients;
     private AuthService authService;
-    private AuthService getAuthService(){
+    public AuthService getAuthService(){
         return authService;
     }
     public Server(){
         ServerSocket server = null;
         Socket socket = null;
-        authService = new BaseAuthService();
-        authService.start();
         clients = new Vector<>();
         try{
             server = new ServerSocket(PORT);
+            authService = new BaseAuthService();
+            authService.start();
             System.out.println("Сервер запущен, ждем клиентов");
             while(true){
                 socket = server.accept(); //режим ожидания, возвращает объект типа сокет, блокирует выполнение кода
@@ -37,11 +37,12 @@ public class Server {
             }catch(IOException e){
                 e.printStackTrace();
             }
+            authService.stop();
         }
     }
     public synchronized boolean isNickBusy(String nick) {
-        for (ClientHandler o : clients) {
-            if (o.getName().equals(nick)) return true;
+        for (ClientHandler c : clients) {
+            if (c.getName().equals(nick)) return true;
         }
         return false;
     }

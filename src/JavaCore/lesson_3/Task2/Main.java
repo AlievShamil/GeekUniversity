@@ -1,5 +1,7 @@
 package JavaCore.lesson_3.Task2;
 
+import JavaCore.lesson_3.Task1;
+
 public class Main {
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
@@ -22,6 +24,23 @@ public class Main {
         phoneBook.add(8916,"МТС");
 
         phoneBook.get("БиЛайн");
+
+
+        PhoneB book = new PhoneB();
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+        book.add("Bob1","123");
+
+
+
 
     }
 }
